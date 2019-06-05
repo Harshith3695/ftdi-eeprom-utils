@@ -6,65 +6,90 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
 #include <sys/time.h>
 #include "../../ftd2xx.h"
+
+void print_usage(void);
+void gen_rand_id(char* node);
+
+void gen_rand_id(char* node){
+	char prefix[3];
+	char postfix[7];
+	srand(time(0));
+	for (int k=0; k<2; k++){
+		int j = ((rand()%25)+65);
+		char tmp = (char)j;
+		prefix[k] = tmp;
+	}
+	int i = ((rand()%900000)+99999);
+	sprintf(postfix, "%d", i);
+	strncpy(node,prefix,2);
+	strncat(node,postfix,6);
+}
+
+void print_usage(){
+	printf("Error! <nodeID | serialNo> or <interface port> not found.\nSee Usage for more info.\n");
+	printf("\nUsage: sudo ./write -n <nodeID | serialNo>\n");
+	printf("       sudo ./write -i <interface port>\n\n");
+}
 
 int main(int argc, char *argv[])
 {
 	FT_STATUS	ftStatus;
 	FT_HANDLE	ftHandle0;
 	FT_DEVICE	ftDevice;
-	int retCode = 0;
-	int iport;
-	int node;
 	FT_PROGRAM_DATA Data;
+	int retCode = 0;
+	int iport = 0;
+	char node[9] = "FT";
+	char man_id[3];
+	int opt;
+	int validOpt = 0;
+
+	if (argc > 1){
+		while((opt = getopt(argc, argv, "n:i:h")) != -1){
+			validOpt = 1;
+			switch(opt){
+				case 'n':
+					strcpy(node, optarg);
+				break;
+				case 'i':
+					iport = atoi(optarg);
+				break;
+				case 'h':
+				default:
+					print_usage();
+					return 1;
+			}
+		}
+		if (!validOpt){
+			print_usage();
+			return 1;
+		}
+	}
+	else{
+		print_usage();
+		return 1;
+	}
 
 	printf("* Program meta-data:\n");
 	printf("--------------------\n");
 
-	while((opt = getopt(argc, argv, "n:i:")) != -1)
-	{
-		switch(opt)
-		{
-			case 'n':
-				node = (int)optarg;
-			break;
-			case 'i':
-				iport = (int)optarg;
-			default:
-				printf("Error, node ID not found!\n");
-				printf("Usage: sudo ./write (--node | -n) <nodeID>\n");
-				printf("   TRAP sudo ./write (--iport | -i) <interface port>\n");
-		}
+	if (!strcmp(node,"FT")){
+		printf("Generating random <nodeID | serialNo>.\n");
+		gen_rand_id(node);
+	}
 
-/*	if(argc > 1) {
-		if (strcmp())
-		if (argv[1] == "--node" || argv[1] == "-n")
-		{
-			iport = 0;
-			sscanf(argv[2], "%d", &node);
-		}
-		else if (argv[1] == "--iport" || argv[1] == "-i")
-		{
-			sscanf(argv[2], "%d", &iport);
-		}
-		else
-		{
-			printf("0 = %s\n",argv[0]);
-			printf("1 = %s\n",argv[1]);
-			printf("2 = %s\n",argv[2]);
-			return 1;
-		}
-	}
-	else {
-		iport = 0;
-		printf("Error, node ID not found!\n");
-		printf("Usage: sudo ./write (--node | -n) <nodeID>\n");
-		printf("\tsudo ./write (--iport | -i) <interface port>\n");
-		return 1;
-	}
-*/
-	printf("opening port %d\n", iport);
+	strncpy(man_id, node, 2);
+
+	printf("Node ID (Ser. no.)\t= %s\n", node);
+	printf("Interface port\t\t= %d\n", iport);
+	printf("Manufacturer ID\t\t= %s\n", man_id);
+
+
+	printf("Opening port\t\t= %d\n", iport);
 	FT_SetVIDPID(0x0403, 0x6011);
 	ftStatus = FT_Open(iport, &ftHandle0);
 
@@ -78,7 +103,7 @@ int main(int argc, char *argv[])
 		return 1;
 	}
 
-	printf("ftHandle0 = %p\n", ftHandle0);
+	printf("ftHandle0\t\t= %p\n", ftHandle0);
 
         ftStatus = FT_GetDeviceInfo(ftHandle0,
                                     &ftDevice,
@@ -94,15 +119,14 @@ int main(int argc, char *argv[])
                 goto exit;
         }
 
-	printf("FT_GetDeviceInfo succeeded. Device is type %d.\n\n", (int)ftDevice);
+	printf("FT_GetDeviceInfo succeeded. Device type = %d.\n\n", (int)ftDevice);
 
 	printf("* Writing common device parameters:\n");
 	printf("-----------------------------------\n");
 	Data.Signature1		= 0x00000000;
 	Data.Signature2		= 0xffffffff;
 	Data.VendorId		= 0x0403;
-	switch((int)ftDevice) // Product ID
-	{
+	switch((int)ftDevice){	// Product ID
 		case 0:		// FT_DEVICE_BM
 			Data.Version		= 0x00000000;
 			Data.ProductId		= 0x6001;
@@ -164,7 +188,7 @@ int main(int argc, char *argv[])
 	Data.Manufacturer 	= "Databuoy Corporation.";
 	Data.ManufacturerId	= "DB";
 	Data.Description	= "Quadropus RevC.";
-	Data.SerialNumber	= "DB000486";			// if fixed, or NULL
+	Data.SerialNumber	= node;			// if fixed, or NULL
 
 	Data.MaxPower		= 200;
 	Data.PnP		= 1;
