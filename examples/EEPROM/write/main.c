@@ -1,7 +1,10 @@
 /*
-	To build use the following gcc statement
+	Modified:	Harshith Kumar Thirumala.
+	Notes:		To build use the following gcc statement
 	(assuming you have the d2xx library in the /usr/local/lib directory).
 	gcc -o write main.c -L. -lftd2xx -Wl,-rpath,/usr/local/lib
+
+	TODO: Adding a conf file, to pass other parameters using it.
 */
 
 #include <stdio.h>
@@ -30,8 +33,8 @@ void gen_rand_id(char* node){
 }
 
 void print_usage(){
-	printf("Error! <nodeID | serialNo> or <interface port> not found.\nSee Usage for more info.\n");
-	printf("\nUsage: sudo ./write -n <nodeID | serialNo>\n");
+	printf("/nUsage: sudo ./write (For writing a random <nodeID | serialNo>)\n");
+	printf("       sudo ./write -n <nodeID | serialNo>\n");
 	printf("       sudo ./write -i <interface port>\n\n");
 }
 
@@ -44,7 +47,7 @@ int main(int argc, char *argv[])
 	int retCode = 0;
 	int iport = 0;
 	char node[9] = "FT";
-	char man_id[3];
+	char man_id[3] = "";
 	int opt;
 	int validOpt = 0;
 
@@ -54,25 +57,29 @@ int main(int argc, char *argv[])
 			switch(opt){
 				case 'n':
 					strcpy(node, optarg);
-				break;
+					break;
 				case 'i':
 					iport = atoi(optarg);
-				break;
+					break;
 				case 'h':
+					print_usage();
+					return 1;
 				default:
+					printf("Error! <nodeID | serialNo> or <interface port> not found.\nSee Usage for more info.\n");
 					print_usage();
 					return 1;
 			}
 		}
 		if (!validOpt){
+			printf("Error! <nodeID | serialNo> or <interface port> not found.\nSee Usage for more info.\n");
 			print_usage();
 			return 1;
 		}
 	}
-	else{
-		print_usage();
-		return 1;
-	}
+//	else{
+//		print_usage();
+//		return 1;
+//	}
 
 	printf("* Program meta-data:\n");
 	printf("--------------------\n");
@@ -186,7 +193,7 @@ int main(int argc, char *argv[])
 			printf("Error, Unknown Device or Device Type!");
 	}
 	Data.Manufacturer 	= "Databuoy Corporation.";
-	Data.ManufacturerId	= "DB";
+	Data.ManufacturerId	= man_id;
 	Data.Description	= "Quadropus RevC.";
 	Data.SerialNumber	= node;			// if fixed, or NULL
 
