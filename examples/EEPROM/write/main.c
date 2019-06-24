@@ -126,7 +126,18 @@ int main(int argc, char *argv[])
                 goto exit;
         }
 
-	printf("FT_GetDeviceInfo succeeded. Device type = %d.\n\n", (int)ftDevice);
+/////////////////////////////////////////////////////////////////////////////////////////
+	// Quadropus related device checking. Remove if using this program
+	// to write other type of ftdi devices.
+//	if ((int)ftDevice == 6){
+//		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n\n", (int)ftDevice);
+//	}
+//	else{
+//		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n", (int)ftDevice);
+//		printf("Device type is not Quadropus device type.\nNot writing to this device. Exiting...\n\n");
+//		goto invalid_exit;
+//	}
+/////////////////////////////////////////////////////////////////////////////////////////
 
 	printf("* Writing common device parameters:\n");
 	printf("-----------------------------------\n");
@@ -191,7 +202,9 @@ int main(int argc, char *argv[])
 		break;
 		default:
 			printf("Error, Unknown Device or Device Type!");
+			goto exit;
 	}
+
 	Data.Manufacturer 	= "Databuoy Corporation.";
 	Data.ManufacturerId	= man_id;
 	Data.Description	= "Quadropus RevC.";
@@ -207,7 +220,7 @@ int main(int argc, char *argv[])
 
 	if (ftDevice == FT_DEVICE_BM)
 	{
-	/* FT232B (Rev4) extensions. */
+	/* FT232B (Rev4) extensions. case: 0,1,2. */
 		Data.Rev4		= 1;
 		Data.IsoIn		= 0;
 		Data.IsoOut		= 0;
@@ -219,7 +232,7 @@ int main(int argc, char *argv[])
 
 	if (ftDevice == FT_DEVICE_2232C)
 	{
-	/* FT2232 (Rev5) extensions. */
+	/* FT2232 (Rev5) extensions. case: 4. */
 		Data.Rev5		= 1;				// non-zero if Rev5 chip, zero otherwise
 		Data.IsoInA		= 0;				// non-zero if in endpoint is isochronous
 		Data.IsoInB		= 0;				// non-zero if in endpoint is isochronous
@@ -243,7 +256,7 @@ int main(int argc, char *argv[])
 
 	if (ftDevice == FT_DEVICE_232R)
 	{
-	/* FT232R (Rev6) extensions. */
+	/* FT232R (Rev6) extensions. case: 5. */
 		Data.UseExtOsc		= 0;				// Use External Oscillator
 		Data.HighDriveIOs	= 0;				// High Drive I/Os
 		Data.EndpointSize	= 0;				// Endpoint size
@@ -267,7 +280,7 @@ int main(int argc, char *argv[])
 
 	if (ftDevice == FT_DEVICE_2232H)
 	{
-	/* FT2232H (Rev7) extensions. */
+	/* FT2232H (Rev7) extensions. case: 6. */
 		Data.PullDownEnable7	= 0;				// non-zero if pull down enabled
 		Data.SerNumEnable7	= 1;				// non-zero if serial number to be used
 		Data.ALSlowSlew		= 0;				// non-zero if AL pins have slow slew
@@ -294,7 +307,7 @@ int main(int argc, char *argv[])
 
 	if (ftDevice == FT_DEVICE_4232H)
 	{
-	/* FT4232H (Rev8) extensions. */
+	/* FT4232H (Rev8) extensions. case: 7. */
 		Data.PullDownEnable8	= 0;				// non-zero if pull down enabled
 		Data.SerNumEnable8	= 0;				// non-zero if serial number to be used
 		Data.ASlowSlew		= 0;				// non-zero if A pins have slow slew
@@ -321,15 +334,15 @@ int main(int argc, char *argv[])
 
 	if (ftDevice == FT_DEVICE_232H)
 	{
-	/* FT232H (Rev9) extensions. */
+	/* FT232H (Rev9) extensions. case: 8. */
 		Data.PullDownEnableH	= 0;				// non-zero if pull down enabled
-		Data.SerNumEnableH	= 0;				// non-zero if serial number to be used
+		Data.SerNumEnableH	= 1;				// non-zero if serial number to be used
 		Data.ACSlowSlewH	= 0;				// non-zero if AC pins have slowslew
 		Data.ACSchmittInputH	= 0;				// non-zero if AC pins are Schmitt input
-		Data.ACDriveCurrentH	= 0;				// valid values are 4mA, 8mA, 12mA, 16mA
+		Data.ACDriveCurrentH	= 4;				// valid values are 4mA, 8mA, 12mA, 16mA
 		Data.ADSlowSlewH	= 0;				// non-zero if AD pins have slow slew
 		Data.ADSchmittInputH	= 0;				// non-zero if AD pins are Schmitt input
-		Data.ADDriveCurrentH	= 0;				// valid values are 4mA, 8mA, 12mA, 16mA
+		Data.ADDriveCurrentH	= 4;				// valid values are 4mA, 8mA, 12mA, 16mA
 		Data.Cbus0H		= 0;				// Cbus Mux control
 		Data.Cbus1H		= 0;				// Cbus Mux control
 		Data.Cbus2H		= 0;				// Cbus Mux control
@@ -340,7 +353,7 @@ int main(int argc, char *argv[])
 		Data.Cbus7H		= 0;				// Cbus Mux control
 		Data.Cbus8H		= 0;				// Cbus Mux control
 		Data.Cbus9H		= 0;				// Cbus Mux control
-		Data.IsFifoH		= 0;				// non-zero if interface is 245 FIFO
+		Data.IsFifoH		= 1;				// non-zero if interface is 245 FIFO
 		Data.IsFifoTarH		= 0;				// non-zero if interface is 245 FIFO CPU target
 		Data.IsFastSerH		= 0;				// non-zero if interface is Fastserial
 		Data.IsFT1248H		= 0;				// non-zero if interface is FT1248
@@ -360,5 +373,7 @@ exit:
 	FT_Close(ftHandle0);
 //	printf("------------------------------------------\n");
 	printf("Writing to device successful. Returning %d\n", retCode);
+
+// invalid_exit:
 	return 0;
 }

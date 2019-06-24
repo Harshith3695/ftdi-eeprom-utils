@@ -3,6 +3,8 @@
 ABSOLUTE_PATH="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/$(basename "${BASH_SOURCE[0]}")"
 ABSOLUTE_DIR=`dirname $ABSOLUTE_PATH`
 
+EXEC_PATH="${ABSOLUTE_DIR}/examples/EEPROM/write"
+
 if [ $# -eq 0 ] || [ $# -gt 1 ]; then
 	echo "Usage: ./write_eeprom.sh <nodeID>"
 	exit 1
@@ -15,11 +17,24 @@ if [ ! $ARG ]; then
 	exit 1
 fi
 
-sudo systemctl stop serialforwarder@quadcomm.service
+SF_STATUS=`sudo systemctl is-active serialforwarder@quadcomm.service`
+if [[ "${SF_STATUS}" == "active" ]]; then
+        echo "Stopping serialforwarder@quadcomm.service"
+        sudo systemctl stop serialforwarder@quadcomm.service
+fi
 
-sudo rmmod ftdi_sio
-sudo usbserial
+FTDI_SIO=`lsmod | grep -o "ftdi_sio" | head -1`
+USBSERIAL=`lsmod | grep -o "usbserial"`
 
-EXEC_PATH="${ABSOLUTE_DIR}/examples/EEPROM/write"
-sudo ${EXEC_PATH}/write -n DB000$1
-echo ${EXEC_PATH}/write -n DB000$1
+if [[ "${FTDI_SIO}" == "ftdi_sio" ]]; then
+        echo "Removing module: ${FTDI_SIO}"
+        sudo rmmod ftdi_sio
+fi
+
+if [[ "${USBSERIAL}" == "usbserial" ]]; then
+        echo "Removing module: ${USBSERIAL}"
+        sudo rmmod usbserial
+fi
+
+echo "${EXEC_PATH}/write_quadropus -n DB000$1"
+sudo ${EXEC_PATH}/write_quadropus -n DB000$1
