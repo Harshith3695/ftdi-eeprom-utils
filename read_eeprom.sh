@@ -24,5 +24,5 @@ if [[ "${USBSERIAL}" == "usbserial" ]]; then
         sudo rmmod usbserial
 fi
 
-echo "${EXEC_PATH}/read"
-sudo ${EXEC_PATH}/read
+echo "${EXEC_PATH}/read_quadropus"
+sudo ${EXEC_PATH}/read_quadropus
