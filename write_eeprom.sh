@@ -36,5 +36,14 @@ if [[ "${USBSERIAL}" == "usbserial" ]]; then
         sudo rmmod usbserial
 fi
 
+echo "_______________________ Writing EEPROM _________________________"
 echo "${EXEC_PATH}/write_quadropus -n DB000$1"
 sudo ${EXEC_PATH}/write_quadropus -n DB000$1
+sleep 1
+echo "________________________________________________________________"
+
+sudo modprobe ftdi_sio
+sleep 3
+sudo systemctl restart serialforwarder@quadcomm.service
+
+echo "Completed $(/usr/bin/basename  "${BASH_SOURCE[0]}")"

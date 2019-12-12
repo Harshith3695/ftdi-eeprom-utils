@@ -24,5 +24,15 @@ if [[ "${USBSERIAL}" == "usbserial" ]]; then
         sudo rmmod usbserial
 fi
 
-echo "${EXEC_PATH}/read"
-sudo ${EXEC_PATH}/read
+echo "_______________________ Reading EEPROM _________________________"
+echo "${EXEC_PATH}/read_quadropus"
+sudo ${EXEC_PATH}/read_quadropus
+sleep 1
+
+echo "________________________________________________________________"
+echo "Loading ftdi_sio & Restarting serialforwarder@quadcomm.service"
+sudo modprobe ftdi_sio
+sleep 3
+sudo systemctl restart serialforwarder@quadcomm.service
+
+echo "Completed $(/usr/bin/basename  "${BASH_SOURCE[0]}")"
