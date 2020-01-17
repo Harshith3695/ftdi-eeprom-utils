@@ -1,0 +1,35 @@
+16:53:33 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+
+16:53:33 Build Finished (took 225ms)
+

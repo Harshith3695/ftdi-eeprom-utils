@@ -1,0 +1,1 @@
+-Wall -Wextra -L. -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7

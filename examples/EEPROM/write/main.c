@@ -33,7 +33,7 @@ void gen_rand_id(char* node){
 }
 
 void print_usage(){
-	printf("/nUsage: sudo ./write (For writing a random <nodeID | serialNo>)\n");
+	printf("\nUsage: sudo ./write -r <Node Rev> (For writing a random <nodeID | serialNo>)\n");
 	printf("       sudo ./write -n <nodeID | serialNo>\n");
 	printf("       sudo ./write -i <interface port>\n\n");
 }
@@ -46,15 +46,20 @@ int main(int argc, char *argv[])
 	FT_PROGRAM_DATA Data;
 	int retCode = 0;
 	int iport = 0;
+        char nodeRev[14] = "Quadropus Rev";
+        char nodeRevOpt[2] = "";
 	char node[9] = "FT";
 	char man_id[3] = "";
 	int opt;
 	int validOpt = 0;
 
 	if (argc > 1){
-		while((opt = getopt(argc, argv, "n:i:h")) != -1){
+		while((opt = getopt(argc, argv, "r:n:i:h")) != -1){
 			validOpt = 1;
 			switch(opt){
+				case 'r':
+					strcpy(nodeRevOpt, optarg);
+					break;
 				case 'n':
 					strcpy(node, optarg);
 					break;
@@ -71,7 +76,7 @@ int main(int argc, char *argv[])
 			}
 		}
 		if (!validOpt){
-			printf("Error! <nodeID | serialNo> or <interface port> not found.\nSee Usage for more info.\n");
+			printf("Error! <nodeRev> or <nodeID | serialNo> or <interface port> not specified.\nSee Usage for more info.\n");
 			print_usage();
 			return 1;
 		}
@@ -89,9 +94,17 @@ int main(int argc, char *argv[])
 		gen_rand_id(node);
 	}
 
+	if (!(strcmp(nodeRevOpt,"B") || strcmp(nodeRevOpt,"C"))){
+		printf("Error! Node revision not specified. Exiting.\n");
+		print_usage();
+		return 1;
+	}
+
+	strcat(nodeRev, nodeRevOpt);
 	strncpy(man_id, node, 2);
 
 	printf("Node ID (Ser. no.)\t= %s\n", node);
+	printf("Node Revision\t\t= %s\n", nodeRev);
 	printf("Interface port\t\t= %d\n", iport);
 	printf("Manufacturer ID\t\t= %s\n", man_id);
 
@@ -127,8 +140,8 @@ int main(int argc, char *argv[])
         }
 
 /////////////////////////////////////////////////////////////////////////////////////////
-	// Quadropus related device checking. Remove if using this program
-	// to write other type of ftdi devices.
+// 	Quadropus related device checking. Remove if using this program
+// 	to write other type of ftdi devices.
 //	if ((int)ftDevice == 6){
 //		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n\n", (int)ftDevice);
 //	}
@@ -207,12 +220,13 @@ int main(int argc, char *argv[])
 
 	Data.Manufacturer 	= "Databuoy Corporation.";
 	Data.ManufacturerId	= man_id;
-	Data.Description	= "Quadropus RevC.";
+	Data.Description	= nodeRev;
 	Data.SerialNumber	= node;			// if fixed, or NULL
 
 	Data.MaxPower		= 200;
 	Data.PnP		= 1;
-	Data.SelfPowered	= 0;
+//	Data.SelfPowered	= 0;			// Toggled to match Quadropus RevC configuration.
+	Data.SelfPowered	= 1;
 	Data.RemoteWakeup	= 0;
 
 	printf("* Writing device specific parameters:\n");

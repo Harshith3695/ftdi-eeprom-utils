@@ -1,0 +1,526 @@
+16:10:06 **** Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:61:32: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle  = 0x%x\n", devInfo[i].ftHandle);
+                               ~^     ~~~~~~~~~~~~~~~~~~~
+                               %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:10:41 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+make: Nothing to be done for 'all'.
+16:13:55 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:61:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:19:21 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:19:37 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:22:21 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+make: Nothing to be done for 'all'.
+16:28:35 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:28:47 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:29:59 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:30:26 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:30:46 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:49:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:49:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:49:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:62:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:33:21 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:53:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:53:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:53:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:66:39: warning: format ‘%x’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%x\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:35:35 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:53:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:53:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:53:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:66:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:36:00 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:53:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:53:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:53:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:66:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:36:13 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:53:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:53:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:53:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:66:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:44:26 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:81:15: error: too many arguments to function ‘FT_GetDeviceInfoList’
+      ftStatus=FT_GetDeviceInfoList(0, &Flags, &Type, &ID, &LocId, SerialNumber, &ftHandleTemp);
+               ^~~~~~~~~~~~~~~~~~~~
+In file included from ../main.c:10:0:
+../includes/ftd2xx.h:1312:20: note: declared here
+   FT_STATUS WINAPI FT_GetDeviceInfoList(
+                    ^~~~~~~~~~~~~~~~~~~~
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:24:10: warning: unused variable ‘Description’ [-Wunused-variable]
+     char Description[64];
+          ^~~~~~~~~~~
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+subdir.mk:18: recipe for target 'main.o' failed
+make: *** [main.o] Error 1
+16:44:59 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:81:15: error: too few arguments to function ‘FT_GetDeviceInfoDetail’
+      ftStatus=FT_GetDeviceInfoDetail(0, &Flags, &Type, &ID, &LocId, SerialNumber, &ftHandleTemp);
+               ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../main.c:10:0:
+../includes/ftd2xx.h:1318:20: note: declared here
+   FT_STATUS WINAPI FT_GetDeviceInfoDetail(
+                    ^~~~~~~~~~~~~~~~~~~~~~
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:24:10: warning: unused variable ‘Description’ [-Wunused-variable]
+     char Description[64];
+          ^~~~~~~~~~~
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+subdir.mk:18: recipe for target 'main.o' failed
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+make: *** [main.o] Error 1
+16:45:34 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:81:15: error: too few arguments to function ‘FT_GetDeviceInfoDetail’
+      ftStatus=FT_GetDeviceInfoDetail(0, &Flags, &Type, &ID, &LocId, &SerialNumber, &ftHandleTemp);
+               ^~~~~~~~~~~~~~~~~~~~~~
+In file included from ../main.c:10:0:
+../includes/ftd2xx.h:1318:20: note: declared here
+   FT_STATUS WINAPI FT_GetDeviceInfoDetail(
+                    ^~~~~~~~~~~~~~~~~~~~~~
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:24:10: warning: unused variable ‘Description’ [-Wunused-variable]
+     char Description[64];
+          ^~~~~~~~~~~
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+make: *** [main.o] Error 1
+subdir.mk:18: recipe for target 'main.o' failed
+16:49:27 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:53:01 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
+16:53:22 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+make: Nothing to be done for 'all'.
+16:53:33 **** Incremental Build of configuration Debug for project ftdi_quadropus ****
+make all 
+Building file: ../main.c
+Invoking: GCC C Compiler
+gcc -I/usr/lib/gcc/x86_64-linux-gnu/7/ -O0 -Wall -Wextra -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.d" -o "main.o" "../main.c"
+../main.c: In function ‘main’:
+../main.c:61:41: warning: implicit declaration of function ‘malloc’ [-Wimplicit-function-declaration]
+      devInfo=(FT_DEVICE_LIST_INFO_NODE*)malloc(sizeof(FT_DEVICE_LIST_INFO_NODE)*numDevs);
+                                         ^~~~~~
+../main.c:61:41: warning: incompatible implicit declaration of built-in function ‘malloc’
+../main.c:61:41: note: include ‘<stdlib.h>’ or provide a declaration of ‘malloc’
+../main.c:74:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:92:39: warning: format ‘%u’ expects argument of type ‘unsigned int’, but argument 2 has type ‘FT_HANDLE {aka void *}’ [-Wformat=]
+        printf(" ftHandle         = 0x%u\n", devInfo[i].ftHandle);
+                                      ~^     ~~~~~~~~~~~~~~~~~~~
+                                      %p
+../main.c:15:11: warning: unused variable ‘dwPID’ [-Wunused-variable]
+     DWORD dwPID;
+           ^~~~~
+../main.c:14:11: warning: unused variable ‘dwVID’ [-Wunused-variable]
+     DWORD dwVID;
+           ^~~~~
+Finished building: ../main.c
+ 
+Building target: ftdi_quadropus
+Invoking: GCC C Linker
+gcc -o  "ftdi_quadropus"  ./main.o    -lftd2xx -lpthread -ldl -lrt -Wl,-rpath /usr/lib/gcc/x86_64-linux-gnu/7/
+Finished building target: ftdi_quadropus
+ 
