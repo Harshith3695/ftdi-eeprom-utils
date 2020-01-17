@@ -124,3 +124,8 @@ The examples show how to call a small subset of the D2XX API.  The full
 API is available here:
 http://www.ftdichip.com/Support/Documents/ProgramGuides/D2XX_Programmer%27s_Guide(FT_000071).pdf
 
+
+Command to build on x86-64.
+---------------------------
+
+arm-linux-gnueabihf-gcc-7 main.c -o BINARY_NAME -Wall -Wextra -L. -lftd2xx -lpthread -ldl -lrt -Wl,-rpath,arch-lib
