@@ -29,6 +29,9 @@ if [ "$2" == "" ] || [ ! $ARG ]; then
 	exit 1
 fi
 
+NODE_REV="$1"
+NODE_ID=`printf "DB%06d" $2`
+
 CONNECTED=`${ABSOLUTE_DIR}/utils/devInfo/listDevs | grep FTDI | sed s/"Number of FTDI devices connected is = "//g`
 if [ $CONNECTED -gt 0 ]; then
     echo "Found $CONNECTED FTDI devices."
@@ -62,7 +65,9 @@ fi
 
 echo "________________________________________________________________"
 echo "_______________________ Writing EEPROM _________________________"
-sudo ${EXEC_PATH}/write_quadropus -r $1 -n DB000$2
+echo "Node Revision: $NODE_REV"
+echo "Node ID: $NODE_ID"
+sudo ${EXEC_PATH}/write_quadropus -r $NODE_REV -n $NODE_ID
 sleep 1
 echo "________________________________________________________________"
 

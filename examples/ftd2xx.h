@@ -690,7 +690,7 @@ extern "C" {
 		UCHAR FT1248FlowControlH;	// FT1248 flow control enable
 		UCHAR IsVCPH;				// non-zero if interface is to use VCP drivers
 		UCHAR PowerSaveEnableH;		// non-zero if using ACBUS7 to save power for self-powered designs
-		
+
 	} FT_PROGRAM_DATA, *PFT_PROGRAM_DATA;
 
 	FTD2XX_API

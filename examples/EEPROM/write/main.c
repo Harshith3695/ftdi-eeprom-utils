@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
         char nodeRev[14] = "Quadropus Rev";
         char nodeRevOpt[2] = "";
 	char node[9] = "FT";
-	char man_id[3] = "";
+	char man_id[7] = "";
 	int opt;
 	int validOpt = 0;
 
@@ -68,7 +68,7 @@ int main(int argc, char *argv[])
 					break;
 				case 'h':
 					print_usage();
-					return 1;
+					return 0;
 				default:
 					printf("Error! <nodeID | serialNo> or <interface port> not found.\nSee Usage for more info.\n");
 					print_usage();
@@ -142,14 +142,14 @@ int main(int argc, char *argv[])
 /////////////////////////////////////////////////////////////////////////////////////////
 // 	Quadropus related device checking. Remove if using this program
 // 	to write other type of ftdi devices.
-//	if ((int)ftDevice == 6){
-//		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n\n", (int)ftDevice);
-//	}
-//	else{
-//		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n", (int)ftDevice);
-//		printf("Device type is not Quadropus device type.\nNot writing to this device. Exiting...\n\n");
-//		goto invalid_exit;
-//	}
+	if ((int)ftDevice == 6){
+		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n\n", (int)ftDevice);
+	}
+	else{
+		printf("FT_GetDeviceInfo succeeded. Device type = %d.\n", (int)ftDevice);
+		printf("Device type is not Quadropus device type.\nNot writing to this device. Exiting...\n\n");
+		goto exit;
+	}
 /////////////////////////////////////////////////////////////////////////////////////////
 
 	printf("* Writing common device parameters:\n");
