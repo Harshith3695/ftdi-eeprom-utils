@@ -1,4 +1,4 @@
-name: C/C++ CI
+name: Current repo status
 
 on:
   push:
