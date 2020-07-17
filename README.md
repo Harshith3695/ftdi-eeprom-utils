@@ -1,4 +1,4 @@
-# ftdi-eeprom-utils
+# ftdi-eeprom-utils ![Current repo status](https://github.com/Harshith3695/ftdi-eeprom-utils/workflows/Current%20repo%20status/badge.svg?branch=master&event=push)
 * Consists of programs that help read from and write to the EEPROM of FTDI USB chips, on th Linux platform. Programs are based on the D2xx drivers from FTDI.
 
 NOTE: If ./read_eeprom.sh exits with this error:
