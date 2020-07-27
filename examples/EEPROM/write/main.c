@@ -225,8 +225,8 @@ int main(int argc, char *argv[])
 
 	Data.MaxPower		= 200;
 	Data.PnP		= 1;
-//	Data.SelfPowered	= 0;			// Toggled to match Quadropus RevC configuration.
-	Data.SelfPowered	= 1;
+	Data.SelfPowered	= 0;
+//	Data.SelfPowered	= 1;			// Toggled to match Quadropus RevC configuration.
 	Data.RemoteWakeup	= 0;
 
 	printf("* Writing device specific parameters:\n");
